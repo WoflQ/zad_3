@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         xDir = Input.GetAxis("Horizontal");
         zDir = Input.GetAxis("Vertical");
 
-        yDir = Physics.gravity.y * Time.deltaTime;
+        yDir += Physics.gravity.y * Time.deltaTime;
 
         moveDirection = transform.right * xDir * speed + transform.forward * zDir * speed + transform.up * yDir;
         charContr.Move(moveDirection * Time.deltaTime);
